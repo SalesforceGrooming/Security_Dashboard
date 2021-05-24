@@ -151,7 +151,7 @@
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Exception__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
