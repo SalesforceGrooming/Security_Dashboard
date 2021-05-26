@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Application_Name_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISBLANK( Application__r.Name )</errorConditionFormula>
+    <errorDisplayField>Application__c</errorDisplayField>
+    <errorMessage>Application Name Shouldn&apos;t Be blank</errorMessage>
+</ValidationRule>
