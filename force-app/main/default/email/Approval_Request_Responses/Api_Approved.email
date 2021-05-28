@@ -1,4 +1,4 @@
-Dear {!API__c.OwnerFirstName} {!API__c.OwnerLastName},
+Dear {!Api__c.OwnerFirstName} {!Api__c.OwnerLastName},
 
 Good news! Your recent Api request has been approved.
 

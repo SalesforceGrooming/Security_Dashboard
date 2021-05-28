@@ -161,6 +161,31 @@
         </rules>
     </decisions>
     <decisions>
+        <name>myPostWaitDecision_myWaitEvent_myWait_myRule_1_event_0</name>
+        <label>myPostWaitDecision_myWaitEvent_myWait_myRule_1_event_0</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>myWaitEvent_myWait_myRule_1_event_0_postWaitExecutionAssignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>myPostWaitRule_myWaitEvent_myWait_myRule_1_event_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>myVariable_current.Remediation_Due_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>myWaitEvent_myWait_myRule_1_event_0_SA1</targetReference>
+            </connector>
+            <label>myPostWaitRule_myWaitEvent_myWait_myRule_1_event_0</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>myPreWaitDecision_myWait_myRule_1</name>
         <label>myPreWaitDecision_myWait_myRule_1</label>
         <locationX>0</locationX>
@@ -209,7 +234,7 @@
             <label>myPreWaitRule_myWait_myRule_1</label>
         </rules>
     </decisions>
-    <interviewLabel>Submit_Exception_For_Approval-2_InterviewLabel</interviewLabel>
+    <interviewLabel>Submit_Exception_For_Approval-3_InterviewLabel</interviewLabel>
     <label>Submit Exception For Approval</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -281,7 +306,7 @@
             <processMetadataValues>
                 <name>inputParameterType</name>
                 <value>
-                    <stringValue>now</stringValue>
+                    <stringValue>referenced</stringValue>
                 </value>
             </processMetadataValues>
             <name>myWaitEvent_myWait_myRule_1_event_0</name>
@@ -294,13 +319,19 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>myWaitEvent_myWait_myRule_1_event_0_SA1</targetReference>
+                <targetReference>myPostWaitDecision_myWaitEvent_myWait_myRule_1_event_0</targetReference>
             </connector>
-            <eventType>AlarmEvent</eventType>
+            <eventType>DateRefAlarmEvent</eventType>
             <inputParameters>
-                <name>AlarmTime</name>
+                <name>TimeTableColumnEnumOrId</name>
                 <value>
-                    <elementReference>$Flow.InterviewStartTime</elementReference>
+                    <stringValue>Exception__c</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>EntityObjectId</name>
+                <value>
+                    <elementReference>myVariable_current.Id</elementReference>
                 </value>
             </inputParameters>
             <inputParameters>
@@ -312,7 +343,13 @@
             <inputParameters>
                 <name>TimeOffset</name>
                 <value>
-                    <numberValue>15.0</numberValue>
+                    <numberValue>-15.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>TimeFieldColumnEnumOrId</name>
+                <value>
+                    <stringValue>Remediation_Due_Date__c</stringValue>
                 </value>
             </inputParameters>
             <label>myWaitEvent_myWait_myRule_1_event_0</label>

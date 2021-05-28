@@ -8,29 +8,20 @@
     <approvalPageFields>
         <field>Application_Name__c</field>
         <field>Name</field>
-        <field>00N0T000004aj7n</field>
-        <field>Remediation_Due_Date__c</field>
-        <field>Remediation_Owner__c</field>
-        <field>Remediation_Plan__c</field>
-        <field>Risk_Involved__c</field>
         <field>Owner</field>
-        <field>Status__c</field>
-        <field>Exception_summary__c</field>
+        <field>Purpose__c</field>
+        <field>Data_Classification__c</field>
+        <field>CreatedBy</field>
+        <field>LastModifiedBy</field>
     </approvalPageFields>
     <approvalStep>
         <allowDelegate>false</allowDelegate>
-        <assignedApprover>
-            <approver>
-                <name>Supervisor</name>
-                <type>queue</type>
-            </approver>
-            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
-        </assignedApprover>
-        <label>Supervisor of Exception owner</label>
-        <name>Supervisor_of_Exception_owner</name>
-    </approvalStep>
-    <approvalStep>
-        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Email</name>
+                <type>Alert</type>
+            </action>
+        </approvalActions>
         <assignedApprover>
             <approver>
                 <name>Admin</name>
@@ -38,52 +29,49 @@
             </approver>
             <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
         </assignedApprover>
-        <label>Admin of Exception owner</label>
-        <name>Admin_of_Exception_owner</name>
-        <rejectBehavior>
-            <type>RejectRequest</type>
-        </rejectBehavior>
+        <label>Admin Of Api Owner</label>
+        <name>Admin_Of_Api_Owner</name>
     </approvalStep>
-    <description>Exceptions must be approved by the Admin and supervisor approvers. These approvers are tracked in approver fields on the Exception object.</description>
-    <emailTemplate>Approval_Request_Responses/Notification_For_Approver</emailTemplate>
+    <description>API must be Approved By Admin User.</description>
+    <emailTemplate>Approval_Request_Responses/Approver_Notification_on_Api</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <finalApprovalActions>
         <action>
-            <name>Email_Exception_owner_about_approval</name>
+            <name>Email_Api_Owner</name>
             <type>Alert</type>
         </action>
         <action>
-            <name>Exception_status_to_Approved</name>
+            <name>Email_Status_To_Be_Approved</name>
             <type>FieldUpdate</type>
         </action>
     </finalApprovalActions>
     <finalApprovalRecordLock>true</finalApprovalRecordLock>
     <finalRejectionActions>
         <action>
-            <name>Email_Exception_owner_about_rejection</name>
+            <name>Email_Api_Owner_for_Rejection</name>
             <type>Alert</type>
         </action>
         <action>
-            <name>Exception_status_to_rejected</name>
+            <name>Email_Status_To_Be_Rejected</name>
             <type>FieldUpdate</type>
         </action>
     </finalRejectionActions>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
     <initialSubmissionActions>
         <action>
-            <name>Email_Admin_user_about</name>
+            <name>Admin_To_Approve</name>
             <type>Alert</type>
         </action>
         <action>
-            <name>Email_Exception_owner</name>
-            <type>Alert</type>
-        </action>
-        <action>
-            <name>Exception_status_to_pending</name>
+            <name>Email_Status_Pending</name>
             <type>FieldUpdate</type>
         </action>
+        <action>
+            <name>Record_submission_on_Api_for</name>
+            <type>Alert</type>
+        </action>
     </initialSubmissionActions>
-    <label>Exception Approval</label>
+    <label>API Approval</label>
     <processOrder>1</processOrder>
     <recordEditability>AdminOrCurrentApprover</recordEditability>
     <showApprovalHistory>true</showApprovalHistory>
