@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Data_Classification__c</fullName>
+    <fullName>Status__c</fullName>
     <externalId>false</externalId>
-    <label>Data Classification</label>
+    <label>Status</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
@@ -12,19 +12,24 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Highly Confidential</fullName>
-                <default>false</default>
-                <label>Highly Confidential</label>
+                <fullName>New</fullName>
+                <default>true</default>
+                <label>New</label>
             </value>
             <value>
-                <fullName>Confidential</fullName>
+                <fullName>pending</fullName>
                 <default>false</default>
-                <label>Confidential</label>
+                <label>pending</label>
             </value>
             <value>
-                <fullName>Restricted</fullName>
+                <fullName>Approved</fullName>
                 <default>false</default>
-                <label>Restricted</label>
+                <label>Approved</label>
+            </value>
+            <value>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <label>Rejected</label>
             </value>
         </valueSetDefinition>
     </valueSet>

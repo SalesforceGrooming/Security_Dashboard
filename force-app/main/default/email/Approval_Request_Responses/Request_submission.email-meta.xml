@@ -2,9 +2,9 @@
 <EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
     <available>true</available>
     <encodingKey>UTF-8</encodingKey>
-    <name>Api Approval Request</name>
+    <name>Request submission</name>
     <style>none</style>
-    <subject>Api request submitted...!!!</subject>
+    <subject>Interested Party Request created</subject>
     <type>text</type>
     <uiType>Aloha</uiType>
 </EmailTemplate>

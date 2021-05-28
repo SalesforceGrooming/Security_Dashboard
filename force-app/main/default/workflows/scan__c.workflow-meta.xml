@@ -7,10 +7,6 @@
         <recipients>
             <type>owner</type>
         </recipients>
-        <recipients>
-            <recipient>testsupervisor@user.com</recipient>
-            <type>user</type>
-        </recipients>
         <senderType>CurrentUser</senderType>
         <template>Approval_Request_Responses/New_Scan_Record</template>
     </alerts>
