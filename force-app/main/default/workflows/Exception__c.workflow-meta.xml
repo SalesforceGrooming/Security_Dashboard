@@ -41,6 +41,16 @@
         <senderType>CurrentUser</senderType>
         <template>Approval_Request_Responses/Exception_Rejected</template>
     </alerts>
+    <alerts>
+        <fullName>Remediation_due_date_is_15_days_from_today</fullName>
+        <description>Remediation due date is 15 days from today</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Approval_Request_Responses/Remediation_due_date</template>
+    </alerts>
     <fieldUpdates>
         <fullName>Exception_status_to_Approved</fullName>
         <field>Status__c</field>

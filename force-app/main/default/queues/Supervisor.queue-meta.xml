@@ -4,13 +4,19 @@
     <name>Supervisor</name>
     <queueMembers>
         <users>
-            <user>abhisheksarkar1013@gmail.com</user>
+            <user>testsupervisor@user.com</user>
         </users>
     </queueMembers>
     <queueSobject>
-        <sobjectType>API__c</sobjectType>
+        <sobjectType>Api__c</sobjectType>
     </queueSobject>
     <queueSobject>
         <sobjectType>Exception__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Request_Access__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Scan__c</sobjectType>
     </queueSobject>
 </Queue>

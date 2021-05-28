@@ -155,7 +155,7 @@
     <externalSharingModel>Read</externalSharingModel>
     <label>Exception</label>
     <nameField>
-        <label>Exception Name</label>
+        <label>Name Of The Exception</label>
         <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
