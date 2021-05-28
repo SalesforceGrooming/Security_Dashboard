@@ -16,7 +16,7 @@
         <description>Email Admin About API to Be Approved</description>
         <protected>false</protected>
         <recipients>
-            <recipient>owner</recipient>
+            <recipient>rajeshm754@gmail.com</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
