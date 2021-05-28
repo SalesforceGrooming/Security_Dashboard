@@ -1,0 +1,5 @@
+Dear {!Request_Access__c.OwnerFirstName} {!Request_Access__c.OwnerLastName}
+
+Good News! Your Request Access request Has Been Approved.
+
+Thanks,
