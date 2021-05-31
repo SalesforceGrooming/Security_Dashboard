@@ -5,7 +5,7 @@
         <description>Email Admin about Exception to approve</description>
         <protected>false</protected>
         <recipients>
-            <recipient>testadmin@user.com</recipient>
+            <recipient>rajeshm754@gmail.com</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
