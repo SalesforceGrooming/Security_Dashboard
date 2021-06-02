@@ -14,7 +14,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Application__c</field>
+                <field>Application_Name__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>

@@ -155,7 +155,7 @@
     <externalSharingModel>Read</externalSharingModel>
     <label>Scan</label>
     <nameField>
-        <label>Scan Name</label>
+        <label>Name of the Scan</label>
         <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>

@@ -7,22 +7,22 @@
     <description>This permission is given to supervisor users to give additional access.</description>
     <fieldPermissions>
         <editable>true</editable>
-        <field>API__c.Application_Name__c</field>
+        <field>Api__c.Application_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>API__c.Data_Classification__c</field>
+        <field>Api__c.Data_Classification__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>API__c.Name__c</field>
+        <field>Api__c.Purpose__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>API__c.Purpose__c</field>
+        <editable>false</editable>
+        <field>Api__c.Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -47,12 +47,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Exception__c.Exception_summary__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Exception__c.Name_Of_The_Exception__c</field>
+        <field>Exception__c.Exception_Summary__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -72,7 +67,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Exception__c.Risk_Involved__c</field>
+        <field>Exception__c.Risks_Involved__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -82,7 +77,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Request_Access__c.Request_status__c</field>
+        <field>Request_Access__c.Request_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -97,37 +92,32 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>scan__c.Application__c</field>
+        <field>Scan__c.Application_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>scan__c.Critical__c</field>
+        <field>Scan__c.Critical_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>scan__c.High__c</field>
+        <field>Scan__c.High_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>scan__c.Low__c</field>
+        <field>Scan__c.Low_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>scan__c.Medium__c</field>
+        <field>Scan__c.Medium_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>scan__c.Name_of_Scan__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>scan__c.Scan_Type__c</field>
+        <field>Scan__c.Scan_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
@@ -139,7 +129,7 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>API__c</object>
+        <object>Api__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -175,11 +165,11 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>scan__c</object>
+        <object>Scan__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <tabSettings>
-        <tab>API__c</tab>
+        <tab>Api__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
@@ -195,7 +185,7 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
-        <tab>scan__c</tab>
+        <tab>Scan__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
 </PermissionSet>
