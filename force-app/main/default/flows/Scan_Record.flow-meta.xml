@@ -2,49 +2,22 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
         <processMetadataValues>
-            <name>processSelection</name>
+            <name>emailAlertSelection</name>
             <value>
-                <stringValue>Request access approval - Request_access_approval</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>selectionType</name>
-            <value>
-                <stringValue>selectedProcess</stringValue>
-            </value>
-        </processMetadataValues>
-        <processMetadataValues>
-            <name>submitterType</name>
-            <value>
-                <stringValue>currentUser</stringValue>
+                <stringValue>New_Scan_Record</stringValue>
             </value>
         </processMetadataValues>
         <name>myRule_1_A1</name>
-        <label>Submit For Approval</label>
+        <label>New scan Record</label>
         <locationX>100</locationX>
         <locationY>200</locationY>
-        <actionName>submit</actionName>
-        <actionType>submit</actionType>
+        <actionName>Scan__c.New_Scan_Record</actionName>
+        <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
-            <name>objectId</name>
+            <name>SObjectRowId</name>
             <value>
                 <elementReference>myVariable_current.Id</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>comment</name>
-        </inputParameters>
-        <inputParameters>
-            <name>processDefinitionNameOrId</name>
-            <value>
-                <stringValue>Request_access_approval</stringValue>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>skipEntryCriteria</name>
-            <value>
-                <booleanValue>false</booleanValue>
             </value>
         </inputParameters>
     </actionCalls>
@@ -68,13 +41,13 @@
                 <processMetadataValues>
                     <name>inputDataType</name>
                     <value>
-                        <stringValue>Picklist</stringValue>
+                        <stringValue>ID</stringValue>
                     </value>
                 </processMetadataValues>
                 <processMetadataValues>
                     <name>leftHandSideType</name>
                     <value>
-                        <stringValue>Picklist</stringValue>
+                        <stringValue>ID</stringValue>
                     </value>
                 </processMetadataValues>
                 <processMetadataValues>
@@ -86,27 +59,24 @@
                 <processMetadataValues>
                     <name>rightHandSideType</name>
                     <value>
-                        <stringValue>Picklist</stringValue>
+                        <stringValue>GlobalConstant</stringValue>
                     </value>
                 </processMetadataValues>
-                <leftValueReference>myVariable_current.Request_Status__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>In Progress</stringValue>
-                </rightValue>
+                <leftValueReference>myVariable_current.Id</leftValueReference>
+                <operator>NotEqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>myRule_1_A1</targetReference>
             </connector>
-            <label>New Request Access Record</label>
+            <label>New Record Of Scan</label>
         </rules>
     </decisions>
-    <interviewLabel>Submit_Request_Access_For_Approval-3_InterviewLabel</interviewLabel>
-    <label>Submit Request Access For Approval</label>
+    <interviewLabel>Scan_Record-1_InterviewLabel</interviewLabel>
+    <label>Scan Record</label>
     <processMetadataValues>
         <name>ObjectType</name>
         <value>
-            <stringValue>Request_Access__c</stringValue>
+            <stringValue>Scan__c</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -124,7 +94,7 @@
     <processMetadataValues>
         <name>TriggerType</name>
         <value>
-            <stringValue>onAllChanges</stringValue>
+            <stringValue>onCreateOnly</stringValue>
         </value>
     </processMetadataValues>
     <processType>Workflow</processType>
@@ -136,7 +106,7 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
-        <objectType>Request_Access__c</objectType>
+        <objectType>Scan__c</objectType>
     </variables>
     <variables>
         <name>myVariable_old</name>
@@ -144,6 +114,6 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>Request_Access__c</objectType>
+        <objectType>Scan__c</objectType>
     </variables>
 </Flow>

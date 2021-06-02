@@ -8,12 +8,28 @@
     <approvalPageFields>
         <field>Name</field>
         <field>Owner</field>
-        <field>Requesting_Reason__c</field>
-        <field>Requesting_Role__c</field>
-        <field>Request_Status__c</field>
+        <field>Application_Name__c</field>
         <field>CreatedBy</field>
+        <field>Exception_Summary__c</field>
         <field>LastModifiedBy</field>
+        <field>Remediation_Due_Date__c</field>
+        <field>Remediation_Owner__c</field>
+        <field>Remediation_Plan__c</field>
+        <field>Risks_Involved__c</field>
+        <field>Status__c</field>
     </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>Supervisor</name>
+                <type>queue</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Supervisor for exception</label>
+        <name>Supervisor_for_exception</name>
+    </approvalStep>
     <approvalStep>
         <allowDelegate>false</allowDelegate>
         <assignedApprover>
@@ -23,26 +39,29 @@
             </approver>
             <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
         </assignedApprover>
-        <label>Admin request access owner</label>
-        <name>Admin_request_access_owner</name>
+        <label>Admin for exception</label>
+        <name>Admin_for_exception</name>
+        <rejectBehavior>
+            <type>RejectRequest</type>
+        </rejectBehavior>
     </approvalStep>
-    <description>Records submitted for increasing the access  approved by admin .</description>
-    <emailTemplate>Approval_Request_Responses/Request_Access_On_Approver_Notification</emailTemplate>
+    <description>This process is created to approve exception records.</description>
+    <emailTemplate>Approval_Request_Responses/Notification_For_Approver</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <finalApprovalActions>
         <action>
-            <name>Approval_status</name>
+            <name>Approved_status</name>
             <type>FieldUpdate</type>
         </action>
         <action>
-            <name>Email_Request_Access_Owner_For_Approval</name>
+            <name>Email_exception_owner_about_record_approval</name>
             <type>Alert</type>
         </action>
     </finalApprovalActions>
     <finalApprovalRecordLock>true</finalApprovalRecordLock>
     <finalRejectionActions>
         <action>
-            <name>Email_Request_Access_For_Rejection</name>
+            <name>Email_exception_owner_about_record_rejection</name>
             <type>Alert</type>
         </action>
         <action>
@@ -53,20 +72,20 @@
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
     <initialSubmissionActions>
         <action>
-            <name>Email</name>
+            <name>Email_admin_About_new_exception</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Email_exception_owner_about_record_submission</name>
             <type>Alert</type>
         </action>
         <action>
             <name>Pending_status</name>
             <type>FieldUpdate</type>
         </action>
-        <action>
-            <name>Record_submission_on_Request_Access_for_Approval_To_Request_Access_Owner</name>
-            <type>Alert</type>
-        </action>
     </initialSubmissionActions>
-    <label>Request access approval</label>
+    <label>Exception record approval</label>
     <processOrder>1</processOrder>
     <recordEditability>AdminOrCurrentApprover</recordEditability>
-    <showApprovalHistory>true</showApprovalHistory>
+    <showApprovalHistory>false</showApprovalHistory>
 </ApprovalProcess>

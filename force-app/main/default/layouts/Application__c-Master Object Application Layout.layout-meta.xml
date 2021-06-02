@@ -84,15 +84,10 @@
             <actionType>StandardButton</actionType>
             <sortOrder>2</sortOrder>
         </platformActionListItems>
-        <platformActionListItems>
-            <actionName>IsotopeSubscription</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>3</sortOrder>
-        </platformActionListItems>
     </platformActionList>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>Scan__c.Application__c</relatedList>
+        <relatedList>Scan__c.Application_Name__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>

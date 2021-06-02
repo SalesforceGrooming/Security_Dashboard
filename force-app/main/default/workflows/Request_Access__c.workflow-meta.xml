@@ -5,7 +5,7 @@
         <description>Email Admin To Approve The Record on Request Access</description>
         <protected>false</protected>
         <recipients>
-            <recipient>testadmin@user.com</recipient>
+            <recipient>rajeshm754@gmail.com</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
@@ -53,7 +53,7 @@
     </alerts>
     <fieldUpdates>
         <fullName>Approval_status</fullName>
-        <field>Request_status__c</field>
+        <field>Request_Status__c</field>
         <literalValue>Approved</literalValue>
         <name>Approval status</name>
         <notifyAssignee>false</notifyAssignee>
@@ -63,7 +63,7 @@
     </fieldUpdates>
     <fieldUpdates>
         <fullName>Pending_status</fullName>
-        <field>Request_status__c</field>
+        <field>Request_Status__c</field>
         <literalValue>In Progress</literalValue>
         <name>Pending status</name>
         <notifyAssignee>false</notifyAssignee>
@@ -73,7 +73,7 @@
     </fieldUpdates>
     <fieldUpdates>
         <fullName>Rejected_status</fullName>
-        <field>Request_status__c</field>
+        <field>Request_Status__c</field>
         <literalValue>Rejected</literalValue>
         <name>Rejected status</name>
         <notifyAssignee>false</notifyAssignee>
