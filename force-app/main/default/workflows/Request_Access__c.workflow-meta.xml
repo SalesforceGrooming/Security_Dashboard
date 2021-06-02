@@ -6,6 +6,7 @@
         <protected>false</protected>
         <recipients>
             <recipient>rajeshm754@gmail.com</recipient>
+            <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>Approval_Request_Responses/Request_Access_Approval_Request</template>
