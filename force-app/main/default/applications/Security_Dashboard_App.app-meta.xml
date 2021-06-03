@@ -12,12 +12,10 @@
     <navType>Standard</navType>
     <setupExperience>all</setupExperience>
     <tabs>standard-home</tabs>
-    <tabs>standard-report</tabs>
-    <tabs>standard-Dashboard</tabs>
-    <tabs>Application__c</tabs>
+   <tabs>Application__c</tabs>
     <tabs>Exception__c</tabs>
-    <tabs>scan__c</tabs>
-    <tabs>API__c</tabs>
+    <tabs>Scan__c</tabs>
+    <tabs>Api__c</tabs>
     <tabs>Request_Access__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Security_Dashboard_App_UtilityBar</utilityBar>
