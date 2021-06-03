@@ -18,6 +18,7 @@
     <tabs>Scan__c</tabs>
     <tabs>Api__c</tabs>
     <tabs>Request_Access__c</tabs>
+    <tabs>standard-ProcessInstanceWorkitem</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Security_Dashboard_App_UtilityBar</utilityBar>
 </CustomApplication>
