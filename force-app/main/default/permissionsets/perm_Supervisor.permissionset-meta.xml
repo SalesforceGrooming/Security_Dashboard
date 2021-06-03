@@ -92,7 +92,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Scan__c.Application__c</field>
+        <field>Scan__c.Application_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
