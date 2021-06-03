@@ -12,7 +12,8 @@
     <navType>Standard</navType>
     <setupExperience>all</setupExperience>
     <tabs>standard-home</tabs>
-   <tabs>Application__c</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>Application__c</tabs>
     <tabs>Exception__c</tabs>
     <tabs>Scan__c</tabs>
     <tabs>Api__c</tabs>
