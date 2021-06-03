@@ -8,14 +8,15 @@
     <approvalPageFields>
         <field>Application_Name__c</field>
         <field>Name</field>
-        <field>00N0T000004aj7n</field>
         <field>Remediation_Due_Date__c</field>
         <field>Remediation_Owner__c</field>
         <field>Remediation_Plan__c</field>
-        <field>Risk_Involved__c</field>
+        <field>Risks_Involved__c</field>
         <field>Owner</field>
         <field>Status__c</field>
-        <field>Exception_summary__c</field>
+        <field>Exception_Summary__c</field>
+        <field>CreatedBy</field>
+        <field>LastModifiedBy</field>
     </approvalPageFields>
     <approvalStep>
         <allowDelegate>false</allowDelegate>
