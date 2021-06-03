@@ -72,11 +72,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Exception__c.Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Request_Access__c.Request_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
