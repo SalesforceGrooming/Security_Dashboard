@@ -19,5 +19,5 @@
     <tabs>Api__c</tabs>
     <tabs>Request_Access__c</tabs>
     <uiType>Lightning</uiType>
-   <utilityBar>Security_Dashboard_App_UtilityBar</utilityBar>
+    <utilityBar>Security_Dashboard_App_UtilityBar</utilityBar>
 </CustomApplication>
