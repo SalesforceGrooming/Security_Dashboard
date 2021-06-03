@@ -87,7 +87,7 @@
     </platformActionList>
     <relatedLists>
         <fields>NAME</fields>
-       <relatedList>Exception__c.Application_Name__c</relatedList>
+      <relatedList>Exception__c.Application_Name__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
