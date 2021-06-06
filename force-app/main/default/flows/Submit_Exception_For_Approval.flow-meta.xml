@@ -218,8 +218,6 @@
             </conditions>
             <connector>
                 <targetReference>myRule_1_pmetdec</targetReference>
-            <connector>
-                <targetReference>myRule_1_A1</targetReference>
             </connector>
             <label>Exception ready for approval</label>
         </rules>
@@ -261,7 +259,6 @@
         <rules>
             <name>myPreWaitRule_myWait_myRule_1</name>
             <conditionLogic>or</conditionLogic>
-            <conditionLogic>and</conditionLogic>
             <conditions>
                 <processMetadataValues>
                     <name>inputDataType</name>
@@ -485,7 +482,6 @@
         </rules>
     </decisions>
     <interviewLabel>Submit_Exception_For_Approval-5_InterviewLabel</interviewLabel>
-    <interviewLabel>Submit_Exception_For_Approval-4_InterviewLabel</interviewLabel>
     <label>Submit Exception For Approval</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -515,9 +511,6 @@
         <name>TriggerType</name>
         <value>
             <stringValue>onAllChanges</stringValue>
-        <name>TriggerType</name>
-        <value>
-            <stringValue>onCreateOnly</stringValue>
         </value>
     </processMetadataValues>
     <processType>Workflow</processType>
