@@ -154,7 +154,6 @@
                     <stringValue>New</stringValue>
                 </rightValue>
             </conditions>
-<<<<<<< feature01
             <conditions>
                 <processMetadataValues>
                     <name>inputDataType</name>
@@ -219,10 +218,8 @@
             </conditions>
             <connector>
                 <targetReference>myRule_1_pmetdec</targetReference>
-=======
             <connector>
                 <targetReference>myRule_1_A1</targetReference>
->>>>>>> dev
             </connector>
             <label>Exception ready for approval</label>
         </rules>
@@ -263,11 +260,8 @@
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>myPreWaitRule_myWait_myRule_1</name>
-<<<<<<< feature01
             <conditionLogic>or</conditionLogic>
-=======
             <conditionLogic>and</conditionLogic>
->>>>>>> dev
             <conditions>
                 <processMetadataValues>
                     <name>inputDataType</name>
@@ -299,7 +293,6 @@
                     <stringValue>New</stringValue>
                 </rightValue>
             </conditions>
-<<<<<<< feature01
             <conditions>
                 <processMetadataValues>
                     <name>inputDataType</name>
@@ -362,15 +355,12 @@
                     <stringValue>Rejected</stringValue>
                 </rightValue>
             </conditions>
-=======
->>>>>>> dev
             <connector>
                 <targetReference>myDecision</targetReference>
             </connector>
             <label>myPreWaitRule_myWait_myRule_1</label>
         </rules>
     </decisions>
-<<<<<<< feature01
     <decisions>
         <name>myRule_1_pmetdec</name>
         <label>Previously Met Decision</label>
@@ -495,9 +485,7 @@
         </rules>
     </decisions>
     <interviewLabel>Submit_Exception_For_Approval-5_InterviewLabel</interviewLabel>
-=======
     <interviewLabel>Submit_Exception_For_Approval-4_InterviewLabel</interviewLabel>
->>>>>>> dev
     <label>Submit Exception For Approval</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -518,7 +506,6 @@
         </value>
     </processMetadataValues>
     <processMetadataValues>
-<<<<<<< feature01
         <name>RecursiveCountVariable</name>
         <value>
             <elementReference>RecursiveCountVariable</elementReference>
@@ -528,11 +515,9 @@
         <name>TriggerType</name>
         <value>
             <stringValue>onAllChanges</stringValue>
-=======
         <name>TriggerType</name>
         <value>
             <stringValue>onCreateOnly</stringValue>
->>>>>>> dev
         </value>
     </processMetadataValues>
     <processType>Workflow</processType>
@@ -571,7 +556,6 @@
             <booleanValue>false</booleanValue>
         </value>
     </variables>
-<<<<<<< feature01
     <variables>
         <name>RecursiveCountVariable</name>
         <dataType>Number</dataType>
@@ -580,8 +564,6 @@
         <isOutput>false</isOutput>
         <scale>2</scale>
     </variables>
-=======
->>>>>>> dev
     <waits>
         <name>myWait_myRule_1</name>
         <label>myWait_myRule_1</label>
