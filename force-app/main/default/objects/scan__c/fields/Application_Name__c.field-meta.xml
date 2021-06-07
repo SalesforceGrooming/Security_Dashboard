@@ -3,7 +3,7 @@
     <fullName>Application_Name__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
-    <label>Application</label>
+    <label>Application Name</label>
     <referenceTo>Application__c</referenceTo>
     <relationshipLabel>Scans</relationshipLabel>
     <relationshipName>Scans</relationshipName>
