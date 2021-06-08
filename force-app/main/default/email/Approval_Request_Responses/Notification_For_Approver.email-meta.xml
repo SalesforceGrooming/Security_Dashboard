@@ -4,7 +4,7 @@
     <encodingKey>UTF-8</encodingKey>
     <name>Notification For Approver</name>
     <style>none</style>
-    <subject>Notification Created For Approver For Approving The Request</subject>
+    <subject>Notification For approver</subject>
     <type>text</type>
     <uiType>Aloha</uiType>
 </EmailTemplate>

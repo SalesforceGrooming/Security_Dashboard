@@ -4,7 +4,7 @@
     <encodingKey>UTF-8</encodingKey>
     <name>Request Access Approved</name>
     <style>none</style>
-    <subject>Your Request Access request Was Approved..!!</subject>
+    <subject>Your Request Access Was Approved..!!</subject>
     <type>text</type>
     <uiType>Aloha</uiType>
 </EmailTemplate>

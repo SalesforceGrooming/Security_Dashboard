@@ -4,7 +4,7 @@
     <encodingKey>UTF-8</encodingKey>
     <name>Exception Approved</name>
     <style>none</style>
-    <subject>Your Position Has Been Approved</subject>
+    <subject>Your Request Is approved.</subject>
     <type>text</type>
     <uiType>Aloha</uiType>
 </EmailTemplate>
