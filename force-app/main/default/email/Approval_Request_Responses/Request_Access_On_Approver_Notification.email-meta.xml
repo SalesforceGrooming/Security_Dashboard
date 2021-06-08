@@ -4,7 +4,7 @@
     <encodingKey>UTF-8</encodingKey>
     <name>Request Access On Approver Notification</name>
     <style>none</style>
-    <subject>New Request Access request has to be Approved</subject>
+    <subject>Your New Request Access record is Approved!!</subject>
     <type>text</type>
     <uiType>Aloha</uiType>
 </EmailTemplate>

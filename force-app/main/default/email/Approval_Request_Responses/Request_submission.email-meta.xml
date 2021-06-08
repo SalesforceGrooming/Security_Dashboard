@@ -4,7 +4,7 @@
     <encodingKey>UTF-8</encodingKey>
     <name>Request submission</name>
     <style>none</style>
-    <subject>Interested Party Request created</subject>
+    <subject>Request Submission upon Exception Record</subject>
     <type>text</type>
     <uiType>Aloha</uiType>
 </EmailTemplate>
