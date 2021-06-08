@@ -155,7 +155,7 @@
     <externalSharingModel>Read</externalSharingModel>
     <label>Request Access</label>
     <nameField>
-        <label>Request Access Name</label>
+        <label>Request Reason</label>
         <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
