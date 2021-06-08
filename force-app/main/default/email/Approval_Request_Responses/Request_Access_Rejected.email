@@ -1,5 +1,3 @@
 Dear {!Request_Access__c.OwnerFirstName} {!Request_Access__c.OwnerLastName}
 
-Unfortunately, Your Recent Request Access request Has Been Rejected.
-
-Thanks,
+Unfortunately ,Sorry to inform you that Your Recent Request Access record Has Been Rejected.
