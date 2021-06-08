@@ -20,10 +20,9 @@ jobs:
         run: |          
           sudo npm install sfdx-git-delta@latest -g
           git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
-          git fetch --all
-          git checkout -b pr
-          git --no-pager diff --name-status pr origin/qa
-          sgd --to pr --from origin/qa --repo . --output .
+          git fetch --all          
+          git --no-pager diff --name-status qa origin/dev
+          sgd --to qa --from origin/dev --repo . --output .
           cat package/package.xml               
       - name: 'Convert Metadata'
         run: sfdx force:source:convert --manifest=package/package.xml --outputdir=convert
