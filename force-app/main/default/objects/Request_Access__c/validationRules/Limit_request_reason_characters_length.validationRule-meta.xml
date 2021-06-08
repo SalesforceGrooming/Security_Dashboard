@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Limit_request_reason_characters_length</fullName>
+    <active>true</active>
+    <errorConditionFormula>LEN( Name )  &gt;= 80</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>Enter Request Reason within 80 characters</errorMessage>
+</ValidationRule>
