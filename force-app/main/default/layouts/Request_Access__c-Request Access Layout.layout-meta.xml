@@ -22,6 +22,10 @@
                 <field>Requesting_Role__c</field>
             </layoutItems>
             <layoutItems>
+                 <behavior>Required</behavior>
+                <field>Name</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Request_Status__c</field>
             </layoutItems>
