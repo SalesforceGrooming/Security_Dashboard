@@ -40,7 +40,7 @@
             <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
         </assignedApprover>
         <entryCriteria>
-            <formula>Remediation_Due_Date__c    &gt;     TODAY()  + 30</formula>
+           <formula>Remediation_Due_Date__c    &gt;     TODAY()  + 30</formula>
         </entryCriteria>
         <label>Admin for exception</label>
         <name>Admin_for_exception</name>
