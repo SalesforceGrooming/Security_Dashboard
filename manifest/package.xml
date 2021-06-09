@@ -8,6 +8,14 @@
         <members>Request_Access__c</members>
         <members>scan__c</members>>
         <name>CustomObject</name>
-    </types>            
+    </types> 
+    <types>
+        <members>Api__c</members>
+        <members>Application__c</members>
+        <members>Exception__c</members>
+        <members>Request_Access__c</members>
+        <members>scan__c</members>
+        <name>CustomTab</name>
+    </types>
     <version>48.0</version>
 </Package>
