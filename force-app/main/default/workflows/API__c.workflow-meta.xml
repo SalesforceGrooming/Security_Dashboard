@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Admin_To_Approve</fullName>
+        <description>Email Admin to Approve the Record on Api</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>rajeshm754@gmail.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Approval_Request_Responses/Approver_Notification_on_Api</template>
+    </alerts>
+    <alerts>
+        <fullName>Email</fullName>
+        <ccEmails>rajchatterjee9563@gmail.com</ccEmails>
+        <description>Email Admin About API to Be Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>rajchatterjee9563@gmail.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rajeshm754@gmail.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Approval_Request_Responses/Notification_For_Approver</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Api_Owner</fullName>
+        <description>Email Api Owner for Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Approval_Request_Responses/Api_Approved</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Api_Owner_for_Rejection</fullName>
+        <description>Email Api Owner for Rejection</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Approval_Request_Responses/Api_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Record_submission_on_Api_for</fullName>
+        <description>Record submission on Api for Approval To Api Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Approval_Request_Responses/Api_Approval_Request</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Email_Status_Pending</fullName>
+        <field>Status__c</field>
+        <literalValue>pending</literalValue>
+        <name>Email Status Pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Email_Status_To_Be_Approved</fullName>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Email Status To Be Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Email_Status_To_Be_Rejected</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Email Status To Be Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

@@ -1,0 +1,31 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+on:
+  pull_request:
+    branches: [ qa ]
+
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      - uses: sfdx-actions/setup-sfdx@v1
+        with:
+          sfdx-auth-url: ${{ secrets.AUTH_SECRET }}
+      - name: "Install Delta App and Create Package"   
+        run: |
+          sudo npm install sfdx-git-delta@latest -g
+          git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
+          git fetch --all
+          git checkout -b pr
+          git --no-pager diff --name-status pr origin/qa
+          sgd --to pr --from origin/qa --repo . --output .
+          cat package/package.xml         
+      - name: 'Convert Metadata'
+        run: sfdx force:source:convert --manifest=package/package.xml  --outputdir=convert
+      - name: 'Validate Metadata'
+        run: sfdx force:mdapi:deploy --deploydir=convert  --checkonly -w30

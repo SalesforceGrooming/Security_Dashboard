@@ -1,0 +1,5 @@
+Dear {!Api__c.OwnerFirstName} {!Api__c.OwnerLastName},
+
+Good news! Your recent Api request has been approved.
+
+Please log in to your org for details.
