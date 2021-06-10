@@ -21,5 +21,13 @@
         <members>*</members>       
         <name>EmailTemplate</name>
     </types>
-    <version>48.0</version>
+    <types>
+        <members>*</members>       
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApprovalProcess</name>
+    </types>
+    <version>51.0</version>
 </Package>
