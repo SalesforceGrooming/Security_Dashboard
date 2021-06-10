@@ -21,10 +21,7 @@
                 <behavior>Required</behavior>
                 <field>Name</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Required</behavior>
-                <field>Name</field>
-            </layoutItems>
+            <layoutItems>  
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Request_Status__c</field>
