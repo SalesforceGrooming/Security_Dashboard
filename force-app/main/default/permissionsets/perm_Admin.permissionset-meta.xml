@@ -72,7 +72,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-         <field>Exception__c.Status__c</field>
+        <field>Exception__c.Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -92,7 +92,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-       <field>Scan__c.High_Number__c</field>
+        <field>Scan__c.High_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -102,7 +102,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-       <field>Scan__c.Medium_Number__c</field>
+        <field>Scan__c.Medium_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -176,7 +176,7 @@
     </tabSettings>
     <tabSettings>
         <tab>Scan__c</tab>
-         <visibility>Visible</visibility>
+        <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
         <tab>standard-report</tab>
