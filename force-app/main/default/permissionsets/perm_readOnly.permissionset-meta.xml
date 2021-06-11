@@ -4,6 +4,10 @@
         <application>Security_Dashboard_App</application>
         <visible>true</visible>
     </applicationVisibilities>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Readonly_custom</name>
+    </customPermissions>
     <description>This permission is given to Read only user.</description>
     <fieldPermissions>
         <editable>false</editable>
@@ -57,7 +61,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Exception__c.Remediation_Owner__c</field>
+        <field>Exception__c.Remediation_Owner_del__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -72,16 +76,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Request_Access__c.Request_Status__c</field>
+        <field>Exception__c.Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Request_Access__c.Requesting_Reason__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Request_Access__c.Requesting_Role__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -146,7 +145,7 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
-        <allowCreate>false</allowCreate>
+        <allowCreate>true</allowCreate>
         <allowDelete>false</allowDelete>
         <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>

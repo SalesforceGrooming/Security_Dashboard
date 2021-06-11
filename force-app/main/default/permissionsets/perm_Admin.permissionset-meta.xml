@@ -4,6 +4,10 @@
         <application>Security_Dashboard_App</application>
         <visible>true</visible>
     </applicationVisibilities>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Admin_Custom</name>
+    </customPermissions>
     <description>This permission is given to Admin users to give additional access.</description>
     <fieldPermissions>
         <editable>true</editable>
@@ -57,7 +61,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Exception__c.Remediation_Owner__c</field>
+        <field>Exception__c.Remediation_Owner_del__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -73,16 +77,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Exception__c.Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Request_Access__c.Request_Status__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Request_Access__c.Requesting_Reason__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -151,11 +145,11 @@
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
+        <modifyAllRecords>false</modifyAllRecords>
         <object>Request_Access__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
@@ -186,6 +180,10 @@
     </tabSettings>
     <tabSettings>
         <tab>Scan__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>standard-report</tab>
         <visibility>Visible</visibility>
     </tabSettings>
 </PermissionSet>
