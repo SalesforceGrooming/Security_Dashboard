@@ -61,11 +61,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Exception__c.Remediation_Owner_del__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Exception__c.Remediation_Plan__c</field>
         <readable>true</readable>
     </fieldPermissions>
