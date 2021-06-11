@@ -14,7 +14,7 @@
         <label>Information</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Requesting_Role__c</field>
             </layoutItems>
             <layoutItems>
