@@ -4,6 +4,10 @@
         <application>Security_Dashboard_App</application>
         <visible>true</visible>
     </applicationVisibilities>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>SupervisorCustom</name>
+    </customPermissions>
     <description>This permission is given to supervisor users to give additional access.</description>
     <fieldPermissions>
         <editable>true</editable>
@@ -57,7 +61,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Exception__c.Remediation_Owner__c</field>
+        <field>Exception__c.Remediation_Owner_del__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -178,4 +182,12 @@
         <tab>Scan__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewMyTeamsDashboards</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewPublicDashboards</name>
+    </userPermissions>
 </PermissionSet>

@@ -4,6 +4,10 @@
         <application>Security_Dashboard_App</application>
         <visible>true</visible>
     </applicationVisibilities>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>Readonly_custom</name>
+    </customPermissions>
     <description>This permission is given to Read only user.</description>
     <fieldPermissions>
         <editable>false</editable>
@@ -57,7 +61,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Exception__c.Remediation_Owner__c</field>
+        <field>Exception__c.Remediation_Owner_del__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
