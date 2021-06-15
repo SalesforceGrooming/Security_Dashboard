@@ -61,11 +61,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Exception__c.Remediation_Owner_del__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Exception__c.Remediation_Plan__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -78,11 +73,6 @@
         <editable>false</editable>
         <field>Exception__c.Status__c</field>
         <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Request_Access__c.Request_Status__c</field>
-        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -167,10 +157,6 @@
         <object>Scan__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
-    <recordTypeVisibilities>
-        <recordType>Request_Access__c.New_Record</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities>
     <tabSettings>
         <tab>Api__c</tab>
         <visibility>Visible</visibility>
