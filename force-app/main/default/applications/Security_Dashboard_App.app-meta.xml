@@ -18,15 +18,7 @@
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Security Dashboard App</label>
-    <navType>Standard</navType>
-    <profileActionOverrides>
-        <actionName>Tab</actionName>
-        <content>New_Scan_Dashboard</content>
-        <formFactor>Large</formFactor>
-        <pageOrSobjectType>standard-home</pageOrSobjectType>
-        <type>Flexipage</type>
-        <profile>Security Dashboard</profile>
-    </profileActionOverrides>
+    <navType>Standard</navType>    
     <setupExperience>all</setupExperience>
     <tabs>standard-home</tabs>
     <tabs>standard-report</tabs>
