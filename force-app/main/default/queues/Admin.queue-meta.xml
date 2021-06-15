@@ -4,8 +4,7 @@
     <name>Admin</name>
     <queueMembers>
         <users>
-            <user>rajeshm754@gmail.com</user>
-            <user>testadmin@user.com</user>
+            <user>rajeshm754@gmail.com</user>            
         </users>
     </queueMembers>
     <queueSobject>
