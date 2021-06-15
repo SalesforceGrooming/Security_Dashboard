@@ -160,7 +160,6 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Exceptions</pluralLabel>
-    <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <searchLayouts></searchLayouts>
     <sharingModel>Read</sharingModel>
     <visibility>Public</visibility>
