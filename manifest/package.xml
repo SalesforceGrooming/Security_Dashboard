@@ -96,6 +96,9 @@
         <name>Workflow</name>
     </types>
     <types>
+        <members>APIfolder</members>
+        <members>Exception_Folder</members>
+        <members>ScanReport</members>
         <members>APIfolder/API_Report_2_PpI</members>
 		<members>APIfolder/New_Apis_Report_vSJ</members>
 		<members>Exception_Folder/New_Exceptions_Report_sxP</members>
@@ -103,6 +106,10 @@
         <name>Report</name>
     </types>
 	<types>
+        <members>APIfolder</members>
+        <members>Exception_Folder</members>
+        <members>ScanDashboard</members>
+        <members>Scanfolder1</members>
         <members>APIfolder/BIvByONgvoaavojZoQtnvjzpxExhnH</members>
 		<members>APIfolder/cQUWeEmoPbsiKdCqwcUHpeCnizaLng</members>
 		<members>APIfolder/gOeuUevtGCppjDjMWpTvOptgSogRmg</members>
