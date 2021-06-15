@@ -1,1 +1,3 @@
-Dear Requester, We Are sorry To inform u That Your request Has Been Rejected.
+Dear{!Exception__c.OwnerFirstName}{!Exception__c.OwnerLastName}
+
+we are sorry to inform you That  your Exception record Has Been rejected.
