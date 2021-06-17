@@ -101,7 +101,7 @@
             <label>New Request Access Record</label>
         </rules>
     </decisions>
-    <interviewLabel>Submit_Request_Access_For_Approval-3_InterviewLabel</interviewLabel>
+    <interviewLabel>Submit_Request_Access_For_Approval-2_InterviewLabel</interviewLabel>
     <label>Submit Request Access For Approval</label>
     <processMetadataValues>
         <name>ObjectType</name>
