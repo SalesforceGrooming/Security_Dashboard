@@ -8,7 +8,6 @@
     <approvalPageFields>
         <field>Name</field>
         <field>Owner</field>
-        <field>00N0T000004atVJ</field>
         <field>Requesting_Role__c</field>
         <field>Request_Status__c</field>
         <field>CreatedBy</field>
