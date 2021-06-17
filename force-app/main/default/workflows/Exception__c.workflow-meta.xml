@@ -5,7 +5,7 @@
         <description>Email Admin about Exception to approve</description>
         <protected>false</protected>
         <recipients>
-            <recipient>testadmin@user.com</recipient>
+            <recipient>rajeshm754@gmail.com</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
@@ -29,10 +29,6 @@
         <recipients>
             <type>owner</type>
         </recipients>
-        <recipients>
-            <recipient>testadmin@user.com</recipient>
-            <type>user</type>
-        </recipients>
         <senderType>CurrentUser</senderType>
         <template>Approval_Request_Responses/Notification_For_Approver_to_approve_the_Record</template>
     </alerts>
@@ -42,10 +38,6 @@
         <protected>false</protected>
         <recipients>
             <type>owner</type>
-        </recipients>
-        <recipients>
-            <recipient>testadmin@user.com</recipient>
-            <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>Approval_Request_Responses/Notification_For_Approver_to_approve_the_Record</template>
