@@ -146,20 +146,19 @@
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
-    <enableHistory>true</enableHistory>
+    <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
-    <enableReports>true</enableReports>
-    <enableSearch>true</enableSearch>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Read</externalSharingModel>
-    <label>Request Access</label>
+    <label>test</label>
     <nameField>
-        <label>Request Reason</label>
-        <trackHistory>false</trackHistory>
+        <label>test Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>Request Accesses</pluralLabel>
+    <pluralLabel>tests</pluralLabel>
     <searchLayouts></searchLayouts>
     <sharingModel>Read</sharingModel>
     <visibility>Public</visibility>

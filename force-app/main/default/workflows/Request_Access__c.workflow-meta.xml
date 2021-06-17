@@ -81,25 +81,4 @@
         <protected>false</protected>
         <reevaluateOnChange>true</reevaluateOnChange>
     </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Request_Access</fullName>
-        <field>RecordTypeId</field>
-        <lookupValue>New_Record</lookupValue>
-        <lookupValueType>RecordType</lookupValueType>
-        <name>Request Access</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>LookupValue</operation>
-        <protected>false</protected>
-        <reevaluateOnChange>false</reevaluateOnChange>
-    </fieldUpdates>
-    <fieldUpdates>
-        <fullName>Status_Field</fullName>
-        <field>Request_Status__c</field>
-        <literalValue>Pending</literalValue>
-        <name>Status Field</name>
-        <notifyAssignee>false</notifyAssignee>
-        <operation>Literal</operation>
-        <protected>false</protected>
-        <reevaluateOnChange>false</reevaluateOnChange>
-    </fieldUpdates>
 </Workflow>

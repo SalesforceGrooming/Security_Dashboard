@@ -110,6 +110,7 @@
         <members>Exception_Folder</members>
         <members>ScanDashboard</members>
         <members>Scanfolder1</members>
+        <members>NewScanDashboard2</members>
         <members>APIfolder/BIvByONgvoaavojZoQtnvjzpxExhnH</members>
 		<members>APIfolder/cQUWeEmoPbsiKdCqwcUHpeCnizaLng</members>
 		<members>APIfolder/gOeuUevtGCppjDjMWpTvOptgSogRmg</members>
@@ -118,6 +119,7 @@
 		<members>Exception_Folder/RGOYdUQUWOzIOgrIEEWaCecybLzcea</members>
 		<members>ScanDashboard/AsXnEzpqUfQDvCNkQUhsoZItiUJkgK</members>
 		<members>Scanfolder1/OneqVDFpnozIRcGaPizUBzfRVTSfmE</members>
+        <members>NewScanDashboard2/yNtSYbEHkYncFZkRHjlrFnbVyxweTN</members>
         <name>Dashboard</name>
 	</types>
     <types>        

@@ -6,24 +6,24 @@
         <type>owner</type>
     </allowedSubmitters>
     <approvalPageFields>
-        <field>Application_Name__c</field>
         <field>Name</field>
+        <field>Application_Name__c</field>
+        <field>Name_Of_The_Exception__c</field>
         <field>Remediation_Due_Date__c</field>
-        <field>Remediation_Owner_del__c</field>
+        <field>Remediation_Owner__c</field>
         <field>Remediation_Plan__c</field>
-        <field>Risks_Involved__c</field>
+        <field>Risk_Involved__c</field>
         <field>Owner</field>
         <field>Status__c</field>
-        <field>Exception_Summary__c</field>
-        <field>CreatedBy</field>
-        <field>LastModifiedBy</field>
     </approvalPageFields>
     <approvalStep>
         <allowDelegate>false</allowDelegate>
         <assignedApprover>
             <approver>
-                <type>adhoc</type>
+                <name>Supervisor</name>
+                <type>queue</type>
             </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
         </assignedApprover>
         <label>Supervisor of Exception owner</label>
         <name>Supervisor_of_Exception_owner</name>
@@ -32,8 +32,10 @@
         <allowDelegate>false</allowDelegate>
         <assignedApprover>
             <approver>
-                <type>adhoc</type>
+                <name>Admin</name>
+                <type>queue</type>
             </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
         </assignedApprover>
         <label>Admin of Exception owner</label>
         <name>Admin_of_Exception_owner</name>
@@ -44,10 +46,44 @@
     <description>Exceptions must be approved by the Admin and supervisor approvers. These approvers are tracked in approver fields on the Exception object.</description>
     <emailTemplate>Approval_Request_Responses/Notification_For_Approver</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <finalApprovalActions>
+        <action>
+            <name>Email_Exception_owner_about_approval</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Exception_status_to_Approved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
     <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Email_Exception_owner_about_rejection</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Exception_status_to_rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Email_Admin_user_about</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Email_Exception_owner</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Exception_status_to_pending</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
     <label>Exception Approval</label>
-    <processOrder>1</processOrder>
+    <processOrder>0</processOrder>
     <recordEditability>AdminOrCurrentApprover</recordEditability>
     <showApprovalHistory>true</showApprovalHistory>
 </ApprovalProcess>

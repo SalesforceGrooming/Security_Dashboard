@@ -11,7 +11,7 @@
         <label>New scan Record</label>
         <locationX>100</locationX>
         <locationY>200</locationY>
-        <actionName>Scan__c.New_Scan_Record</actionName>
+        <actionName>scan__c.New_Scan_Record</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
@@ -76,7 +76,7 @@
     <processMetadataValues>
         <name>ObjectType</name>
         <value>
-            <stringValue>Scan__c</stringValue>
+            <stringValue>scan__c</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -106,7 +106,7 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
-        <objectType>Scan__c</objectType>
+        <objectType>scan__c</objectType>
     </variables>
     <variables>
         <name>myVariable_old</name>
@@ -114,6 +114,6 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>Scan__c</objectType>
+        <objectType>scan__c</objectType>
     </variables>
 </Flow>

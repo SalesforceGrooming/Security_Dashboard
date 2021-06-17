@@ -1,3 +1,3 @@
-Dear  {!Scan__c.OwnerFirstName} {!Scan__c.OwnerLastName},
+Dear  {!scan__c.OwnerFirstName} {!scan__c.OwnerLastName},
 
  We are pleased to inform you that  your new scan record has been created successfully.
