@@ -25,8 +25,8 @@
     <recordLookups>
         <name>Perm_set_Assignment_Record</name>
         <label>Perm set Assignment Record</label>
-        <locationX>189</locationX>
-        <locationY>380</locationY>
+        <locationX>538</locationX>
+        <locationY>114</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <filterLogic>and</filterLogic>
         <filters>
@@ -48,8 +48,11 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationX>44</locationX>
+        <locationY>23</locationY>
+        <connector>
+            <targetReference>Perm_set_Assignment_Record</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Request_Status__c</field>
@@ -62,5 +65,5 @@
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>InvalidDraft</status>
+    <status>Draft</status>
 </Flow>
