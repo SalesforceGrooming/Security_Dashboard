@@ -23,26 +23,6 @@
         <template>Approval_Request_Responses/Notification_For_Approver</template>
     </alerts>
     <alerts>
-        <fullName>Email_admin_about_exception_to_approve_with_change_in_remediation_due_Date</fullName>
-        <description>Email admin about exception to approve with change in remediation due Date</description>
-        <protected>false</protected>
-        <recipients>
-            <type>owner</type>
-        </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>Approval_Request_Responses/Notification_For_Approver_to_approve_the_Record</template>
-    </alerts>
-    <alerts>
-        <fullName>Email_exception_about_record_submission_with_change_in_remediation_due_date</fullName>
-        <description>Email exception about record submission with change in remediation due date</description>
-        <protected>false</protected>
-        <recipients>
-            <type>owner</type>
-        </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>Approval_Request_Responses/Notification_For_Approver_to_approve_the_Record</template>
-    </alerts>
-    <alerts>
         <fullName>Email_exception_owner_about_record_approval</fullName>
         <description>Email exception owner about record approval</description>
         <protected>false</protected>
