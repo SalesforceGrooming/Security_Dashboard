@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Admin</name>
+    <queueMembers>
+        <users>
+            <user>rajeshm754@gmail.com</user>
+            <user>testadmin@user.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Api__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Exception__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Request_Access__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Scan__c</sobjectType>
+    </queueSobject>
+</Queue>
