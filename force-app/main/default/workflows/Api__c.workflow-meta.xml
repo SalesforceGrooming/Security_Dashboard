@@ -13,8 +13,13 @@
     </alerts>
     <alerts>
         <fullName>Email</fullName>
+        <ccEmails>rajchatterjee9563@gmail.com</ccEmails>
         <description>Email Admin About API to Be Approved</description>
         <protected>false</protected>
+        <recipients>
+            <recipient>rajchatterjee9563@gmail.com</recipient>
+            <type>user</type>
+        </recipients>
         <recipients>
             <recipient>rajeshm754@gmail.com</recipient>
             <type>user</type>

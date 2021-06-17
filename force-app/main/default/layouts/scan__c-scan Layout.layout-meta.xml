@@ -14,7 +14,7 @@
         <label>Information</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>Application_Name__c</field>
             </layoutItems>
             <layoutItems>
@@ -22,7 +22,7 @@
                 <field>Name</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>Scan_Type__c</field>
             </layoutItems>
             <layoutItems>
