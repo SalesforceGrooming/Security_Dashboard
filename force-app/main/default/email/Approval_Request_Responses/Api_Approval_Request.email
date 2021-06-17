@@ -1,0 +1,3 @@
+Dear {!Api__c.OwnerFirstName} {!Api__c.OwnerLastName},
+
+Your recent Api request has been submitted successfully for approval.
