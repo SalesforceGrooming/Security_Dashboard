@@ -1,4 +1,4 @@
-Dear {!Api__c.OwnerFirstName} {!Api__c.OwnerLastName},
+Dear {!API__c.OwnerFirstName} {!API__c.OwnerLastName},
 
 Unfortunately, your recent Api request has been rejected.
 

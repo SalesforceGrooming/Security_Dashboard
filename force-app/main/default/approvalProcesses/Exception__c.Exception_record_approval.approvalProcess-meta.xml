@@ -13,7 +13,6 @@
         <field>Exception_Summary__c</field>
         <field>LastModifiedBy</field>
         <field>Remediation_Due_Date__c</field>
-        <field>Remediation_Owner__c</field>
         <field>Remediation_Plan__c</field>
         <field>Risks_Involved__c</field>
         <field>Status__c</field>
@@ -40,7 +39,7 @@
             <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
         </assignedApprover>
         <entryCriteria>
-            <formula>Remediation_Due_Date__c  &gt;  DATE(0,0,30)</formula>
+            <formula>Remediation_Due_Date__c    &gt;     TODAY()  + 30</formula>
         </entryCriteria>
         <label>Admin for exception</label>
         <name>Admin_for_exception</name>

@@ -106,7 +106,7 @@
     <processMetadataValues>
         <name>ObjectType</name>
         <value>
-            <stringValue>Api__c</stringValue>
+            <stringValue>API__c</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -136,7 +136,7 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
-        <objectType>Api__c</objectType>
+        <objectType>API__c</objectType>
     </variables>
     <variables>
         <name>myVariable_old</name>
@@ -144,6 +144,6 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <objectType>Api__c</objectType>
+        <objectType>API__c</objectType>
     </variables>
 </Flow>
