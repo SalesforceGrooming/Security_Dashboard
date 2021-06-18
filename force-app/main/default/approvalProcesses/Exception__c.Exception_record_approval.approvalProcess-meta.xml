@@ -13,6 +13,7 @@
         <field>Exception_Summary__c</field>
         <field>LastModifiedBy</field>
         <field>Remediation_Due_Date__c</field>
+        <field>Remediation_Owner_del__c</field>
         <field>Remediation_Plan__c</field>
         <field>Risks_Involved__c</field>
         <field>Status__c</field>
@@ -60,7 +61,7 @@
             <type>Alert</type>
         </action>
     </finalApprovalActions>
-    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
     <finalRejectionActions>
         <action>
             <name>Email_exception_owner_about_record_rejection</name>

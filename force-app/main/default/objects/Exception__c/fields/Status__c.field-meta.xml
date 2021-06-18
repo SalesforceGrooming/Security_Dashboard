@@ -8,12 +8,11 @@
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
                 <fullName>New</fullName>
-                <default>true</default>
+                <default>false</default>
                 <label>New</label>
             </value>
             <value>
