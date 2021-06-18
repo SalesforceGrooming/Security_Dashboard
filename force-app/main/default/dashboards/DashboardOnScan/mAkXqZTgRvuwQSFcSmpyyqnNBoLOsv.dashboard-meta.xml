@@ -104,7 +104,7 @@
         <numberOfColumns>12</numberOfColumns>
         <rowHeight>36</rowHeight>
     </dashboardGridLayout>
-    <dashboardType>LoggedInUser</dashboardType>
+    <dashboardType>MyTeamUser</dashboardType>
     <isGridLayout>true</isGridLayout>
     <runningUser>pradeepkumar.d@srsconsultinginc.com.ent</runningUser>
     <textColor>#000000</textColor>
