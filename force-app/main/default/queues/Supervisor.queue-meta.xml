@@ -4,12 +4,11 @@
     <name>Supervisor</name>
     <queueMembers>
         <users>
-            <user>abhisupervisor@gmail.com.qa</user>
-            <user>rabi.supervisor@gmail.com.qa</user>
+            <user>rajeshm754@gmail.com</user>
         </users>
     </queueMembers>
     <queueSobject>
-        <sobjectType>API__c</sobjectType>
+        <sobjectType>Api__c</sobjectType>
     </queueSobject>
     <queueSobject>
         <sobjectType>Exception__c</sobjectType>
@@ -18,6 +17,6 @@
         <sobjectType>Request_Access__c</sobjectType>
     </queueSobject>
     <queueSobject>
-        <sobjectType>scan__c</sobjectType>
+        <sobjectType>Scan__c</sobjectType>
     </queueSobject>
 </Queue>

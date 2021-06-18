@@ -12,36 +12,6 @@
         <template>Approval_Request_Responses/Notification_For_Approver</template>
     </alerts>
     <alerts>
-        <fullName>Email_Exception_owner</fullName>
-        <description>Email Exception owner about record submission for approval</description>
-        <protected>false</protected>
-        <recipients>
-            <type>owner</type>
-        </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>Approval_Request_Responses/Request_submission</template>
-    </alerts>
-    <alerts>
-        <fullName>Email_Exception_owner_about_approval</fullName>
-        <description>Email Exception owner about approval</description>
-        <protected>false</protected>
-        <recipients>
-            <type>owner</type>
-        </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>Approval_Request_Responses/Exception_Approved</template>
-    </alerts>
-    <alerts>
-        <fullName>Email_Exception_owner_about_rejection</fullName>
-        <description>Email Exception owner about rejection</description>
-        <protected>false</protected>
-        <recipients>
-            <type>owner</type>
-        </recipients>
-        <senderType>CurrentUser</senderType>
-        <template>Approval_Request_Responses/Exception_Rejected</template>
-    </alerts>
-    <alerts>
         <fullName>Email_admin_About_new_exception</fullName>
         <description>Email admin About new exception</description>
         <protected>false</protected>
