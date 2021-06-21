@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>52.0</apiVersion>
+    <decisions>
+        <name>By_checking_Record</name>
+        <label>By checking Record</label>
+        <locationX>603</locationX>
+        <locationY>133</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Checked_record</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Perm_set_Assignment_Record.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_Perm_Set_Record</targetReference>
+            </connector>
+            <label>Checked record</label>
+        </rules>
+    </decisions>
     <interviewLabel>Flow on Request Access - 1 {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Flow on Request Access - 1</label>
     <processMetadataValues>
@@ -22,12 +44,56 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Perm_set_Assignment</name>
+        <label>Create Perm set Assignment</label>
+        <locationX>799</locationX>
+        <locationY>297</locationY>
+        <connector>
+            <targetReference>Assign_Role</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AssigneeId</field>
+            <value>
+                <elementReference>$Record.CreatedById</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>PermissionSetId</field>
+            <value>
+                <stringValue>0PS0T000000EXm3WAG</stringValue>
+            </value>
+        </inputAssignments>
+        <object>PermissionSetAssignment</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordDeletes>
+        <name>Delete_Perm_Set_Record</name>
+        <label>Delete  Perm Set Record</label>
+        <locationX>822</locationX>
+        <locationY>130</locationY>
+        <connector>
+            <targetReference>Create_Perm_set_Assignment</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>PermissionSetId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>0PS0T000000EXlyWAG</stringValue>
+            </value>
+        </filters>
+        <object>PermissionSetAssignment</object>
+    </recordDeletes>
     <recordLookups>
         <name>Perm_set_Assignment_Record</name>
         <label>Perm set Assignment Record</label>
-        <locationX>538</locationX>
-        <locationY>114</locationY>
+        <locationX>413</locationX>
+        <locationY>123</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>By_checking_Record</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>AssigneeId</field>
@@ -47,9 +113,30 @@
         <object>PermissionSetAssignment</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordUpdates>
+        <name>Assign_Role</name>
+        <label>Assign Role</label>
+        <locationX>585</locationX>
+        <locationY>305</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.CreatedById</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>UserRoleId</field>
+            <value>
+                <stringValue>00E0T000000LWFE</stringValue>
+            </value>
+        </inputAssignments>
+        <object>User</object>
+    </recordUpdates>
     <start>
-        <locationX>44</locationX>
-        <locationY>23</locationY>
+        <locationX>35</locationX>
+        <locationY>42</locationY>
         <connector>
             <targetReference>Perm_set_Assignment_Record</targetReference>
         </connector>
@@ -62,7 +149,7 @@
             </value>
         </filters>
         <object>Request_Access__c</object>
-        <recordTriggerType>Create</recordTriggerType>
+        <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Draft</status>
