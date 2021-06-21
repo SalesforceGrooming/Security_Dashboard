@@ -2,46 +2,39 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>52.0</apiVersion>
     <assignments>
-        <name>Permission_set_records</name>
-        <label>Permission set records</label>
-        <locationX>581</locationX>
-        <locationY>118</locationY>
+        <name>AssignfetchedRecords</name>
+        <label>AssignfetchedRecords</label>
+        <locationX>564</locationX>
+        <locationY>119</locationY>
         <assignmentItems>
-            <assignToReference>Get_Permission_Set_Assignment_Records.PermissionSetId</assignToReference>
+            <assignToReference>Storepermissionset</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>permissionsetrecords.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Get_Permission_Set_Assignment_Records.AssigneeId</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>permissionsetrecords.Id</elementReference>
+                <elementReference>Get_Records</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Record_check</targetReference>
+            <targetReference>CheckNUll</targetReference>
         </connector>
     </assignments>
     <decisions>
-        <name>Record_check</name>
-        <label>Record check</label>
-        <locationX>727</locationX>
-        <locationY>119</locationY>
+        <name>CheckNUll</name>
+        <label>CheckNUll</label>
+        <locationX>716</locationX>
+        <locationY>125</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Check_Records</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>permissionsetrecords.Id</leftValueReference>
+                <leftValueReference>Storepermissionset</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Delete_permission_set_record</targetReference>
+                <targetReference>DeletePermSetRec</targetReference>
             </connector>
             <label>Check Records</label>
         </rules>
@@ -68,12 +61,12 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordCreates>
-        <name>Create_New_Permission_set_Assignment</name>
-        <label>Create New Permission set Assignment</label>
-        <locationX>735</locationX>
-        <locationY>385</locationY>
+        <name>CreatePermSetRecord</name>
+        <label>CreatePermSetRecord</label>
+        <locationX>901</locationX>
+        <locationY>286</locationY>
         <connector>
-            <targetReference>Update_Queue</targetReference>
+            <targetReference>Update_Queues</targetReference>
         </connector>
         <inputAssignments>
             <field>AssigneeId</field>
@@ -91,31 +84,38 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordDeletes>
-        <name>Delete_permission_set_record</name>
-        <label>Delete permission set record</label>
-        <locationX>735</locationX>
-        <locationY>247</locationY>
+        <name>DeletePermSetRec</name>
+        <label>DeletePermSetRec</label>
+        <locationX>894</locationX>
+        <locationY>126</locationY>
         <connector>
-            <targetReference>Create_New_Permission_set_Assignment</targetReference>
+            <targetReference>CreatePermSetRecord</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>PermissionSetId</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>0PS0T000000EXm3WAG</stringValue>
+                <elementReference>Storepermissionset.PermissionSetId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>AssigneeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Storepermissionset.AssigneeId</elementReference>
             </value>
         </filters>
         <object>PermissionSetAssignment</object>
     </recordDeletes>
     <recordLookups>
-        <name>Get_Permission_Set_Assignment_Records</name>
-        <label>Get Permission Set Assignment Records</label>
-        <locationX>432</locationX>
-        <locationY>118</locationY>
+        <name>Get_Records</name>
+        <label>Get Records</label>
+        <locationX>418</locationX>
+        <locationY>119</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Permission_set_records</targetReference>
+            <targetReference>AssignfetchedRecords</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -137,55 +137,55 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Assign_Role</name>
-        <label>Assign Role</label>
-        <locationX>312</locationX>
-        <locationY>392</locationY>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>UserRoleId</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.CreatedById</elementReference>
-            </value>
-        </filters>
-        <inputAssignments>
-            <field>UserRoleId</field>
-            <value>
-                <stringValue>00E0T000000LWF9</stringValue>
-            </value>
-        </inputAssignments>
-        <object>User</object>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Queue</name>
-        <label>Update Queue</label>
-        <locationX>514</locationX>
-        <locationY>393</locationY>
+        <name>Update_Queues</name>
+        <label>Update Queues</label>
+        <locationX>904</locationX>
+        <locationY>417</locationY>
         <connector>
-            <targetReference>Assign_Role</targetReference>
+            <targetReference>Update_The_Role</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>$Record.CreatedById</elementReference>
+                <elementReference>$Record.Id</elementReference>
             </value>
         </filters>
         <inputAssignments>
-            <field>Name</field>
+            <field>CollaborationRole</field>
             <value>
-                <stringValue>00G0T000001djaJ</stringValue>
+                <stringValue>00G0T000001djaJUAQ</stringValue>
             </value>
         </inputAssignments>
-        <object>Group</object>
+        <object>CollaborationGroupMember</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_The_Role</name>
+        <label>Update The Role</label>
+        <locationX>665</locationX>
+        <locationY>417</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>UserRoleId</field>
+            <value>
+                <stringValue>00E0T000000LWF9UAO</stringValue>
+            </value>
+        </inputAssignments>
+        <object>User</object>
     </recordUpdates>
     <start>
         <locationX>50</locationX>
         <locationY>45</locationY>
         <connector>
-            <targetReference>Get_Permission_Set_Assignment_Records</targetReference>
+            <targetReference>Get_Records</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -201,21 +201,18 @@
     </start>
     <status>Active</status>
     <variables>
-        <name>permissionsetrecords</name>
-        <dataType>SObject</dataType>
-        <isCollection>false</isCollection>
-        <isInput>true</isInput>
-        <isOutput>false</isOutput>
-        <objectType>PermissionSetAssignment</objectType>
-    </variables>
-    <variables>
-        <name>PermRecords</name>
+        <name>GetPermissionSetid</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <value>
-            <elementReference>Create_New_Permission_set_Assignment</elementReference>
-        </value>
+    </variables>
+    <variables>
+        <name>Storepermissionset</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>PermissionSetAssignment</objectType>
     </variables>
 </Flow>
