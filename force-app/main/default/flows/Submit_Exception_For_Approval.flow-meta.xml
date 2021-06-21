@@ -589,7 +589,7 @@
             <label>Previously Met - Prev</label>
         </rules>
     </decisions>
-    <interviewLabel>Submit_Exception_For_Approval-10_InterviewLabel</interviewLabel>
+    <interviewLabel>Submit_Exception_For_Approval-11_InterviewLabel</interviewLabel>
     <label>Submit Exception For Approval</label>
     <processMetadataValues>
         <name>ObjectType</name>
@@ -623,7 +623,7 @@
     </processMetadataValues>
     <processType>Workflow</processType>
     <startElementReference>myPreWaitDecision_myWait_myRule_1</startElementReference>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>cancelWaits</name>
         <dataType>String</dataType>
