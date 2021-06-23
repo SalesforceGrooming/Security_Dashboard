@@ -69,7 +69,7 @@
         <value>1</value>
     </params>
     <reportType>CustomEntity$Scan__c</reportType>
-    <scope>organization</scope>
+    <scope>user</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
