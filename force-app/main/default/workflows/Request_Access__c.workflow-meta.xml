@@ -64,12 +64,12 @@
     <fieldUpdates>
         <fullName>Pending_status</fullName>
         <field>Request_Status__c</field>
-        <literalValue>In Progress</literalValue>
+        <literalValue>Pending</literalValue>
         <name>Pending status</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Literal</operation>
         <protected>false</protected>
-        <reevaluateOnChange>true</reevaluateOnChange>
+        <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
         <fullName>Rejected_status</fullName>
