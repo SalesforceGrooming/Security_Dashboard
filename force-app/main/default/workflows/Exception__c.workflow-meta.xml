@@ -12,6 +12,16 @@
         <template>Approval_Request_Responses/Notification_For_Approver</template>
     </alerts>
     <alerts>
+        <fullName>Email_Requestor_about_resubmission_of_record_for_Approval</fullName>
+        <description>Email Requestor about resubmission of record for Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Approval_Request_Responses/Request_submission</template>
+    </alerts>
+    <alerts>
         <fullName>Email_admin_About_new_exception</fullName>
         <description>Email admin About new exception</description>
         <protected>false</protected>
@@ -70,7 +80,7 @@
         <notifyAssignee>false</notifyAssignee>
         <operation>Literal</operation>
         <protected>false</protected>
-        <reevaluateOnChange>false</reevaluateOnChange>
+        <reevaluateOnChange>true</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
         <fullName>Exception_status_to_Approved</fullName>
