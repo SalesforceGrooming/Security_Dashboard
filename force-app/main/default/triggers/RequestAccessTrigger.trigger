@@ -2,21 +2,12 @@ trigger RequestAccessTrigger on Request_Access__c (before insert)
 {
     Boolean isFirsttime = true;
     List<Request_Access__c> Requestlist = New list<Request_Access__c>();
-    For(Request_Access__c req : [select name, id, Request_Status__c, Requesting_Role__c,createdby.id From Request_Access__c])
+    Requestlist = [select  id  From Request_Access__c where Request_Status__c != 'Rejected' and createdbyid = :userinfo.getUserId()];
+    for(Request_Access__c R : Trigger.New)
     {
-        for(Request_Access__c R : Trigger.New)
+        if(!Requestlist.isempty() && R.Request_Status__c != 'Rejected')
         {
-          if(Req.createdby.id == userinfo.getUserId())
-          {
-              if(R.Request_Status__c == 'Pending' || R.Request_Status__c == 'Approved')
-              {
-                  R.adderror('Can Not Create One More Record');
-              }
-              if(R.Request_Status__c == 'Rejected')
-              {
-                  Requestlist.add(R);
-              }
-          }
+            R.adderror('Can Not Create One More Record');
         }
     }
 }
