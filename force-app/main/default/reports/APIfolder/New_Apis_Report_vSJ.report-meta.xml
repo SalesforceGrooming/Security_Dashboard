@@ -37,15 +37,6 @@
     <columns>
         <field>Api__c.Application_Name__c</field>
     </columns>
-    <filter>
-        <criteriaItems>
-            <column>Api__c.Data_Classification__c</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>Confidential</value>
-        </criteriaItems>
-    </filter>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
