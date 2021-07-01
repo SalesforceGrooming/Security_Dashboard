@@ -5,5 +5,20 @@
         <sharedTo>Admin</sharedTo>
         <sharedToType>Role</sharedToType>
     </folderShares>
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>Read_only</sharedTo>
+        <sharedToType>Role</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>Supervisor</sharedTo>
+        <sharedToType>Role</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>User</sharedTo>
+        <sharedToType>Role</sharedToType>
+    </folderShares>
     <name>Dashboard On Scan</name>
 </DashboardFolder>
