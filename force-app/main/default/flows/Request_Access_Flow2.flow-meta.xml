@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>52.0</apiVersion>
+    <decisions>
+        <name>Check_for_Record_Update</name>
+        <label>Check for Record Update</label>
+        <locationX>485</locationX>
+        <locationY>179</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Completed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.UserRoleId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>00E0T000000LWF9UAO</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Status</targetReference>
+            </connector>
+            <label>Completed</label>
+        </rules>
+        <rules>
+            <name>Error</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.UserRoleId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>00E0T000000LWFEUA4</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Status_as_Error</targetReference>
+            </connector>
+            <label>Error</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_User</name>
+        <label>Check User</label>
+        <locationX>149</locationX>
+        <locationY>362</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_user_id</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CreatedBy.UserRoleId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>00E0T000000LWFEUA4</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Delete_permission_sets</targetReference>
+            </connector>
+            <label>Check user id</label>
+        </rules>
+    </decisions>
     <interviewLabel>Request Access Flow-2 {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Request Access Flow2</label>
     <processMetadataValues>
@@ -25,8 +84,8 @@
     <recordCreates>
         <name>Create_Permission_sets</name>
         <label>Create Permission sets</label>
-        <locationX>367</locationX>
-        <locationY>357</locationY>
+        <locationX>473</locationX>
+        <locationY>356</locationY>
         <connector>
             <targetReference>Create_Queue_Records</targetReference>
         </connector>
@@ -48,8 +107,8 @@
     <recordCreates>
         <name>Create_Queue_Records</name>
         <label>Create Queue Records</label>
-        <locationX>535</locationX>
-        <locationY>361</locationY>
+        <locationX>596</locationX>
+        <locationY>356</locationY>
         <connector>
             <targetReference>Assign_Role</targetReference>
         </connector>
@@ -71,8 +130,8 @@
     <recordDeletes>
         <name>Delete_permission_sets</name>
         <label>Delete permission sets</label>
-        <locationX>182</locationX>
-        <locationY>349</locationY>
+        <locationX>344</locationX>
+        <locationY>354</locationY>
         <connector>
             <targetReference>Create_Permission_sets</targetReference>
         </connector>
@@ -96,8 +155,8 @@
     <recordUpdates>
         <name>Assign_Role</name>
         <label>Assign Role</label>
-        <locationX>697</locationX>
-        <locationY>359</locationY>
+        <locationX>734</locationX>
+        <locationY>352</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -114,22 +173,66 @@
         </inputAssignments>
         <object>User</object>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_Status</name>
+        <label>Update Status</label>
+        <locationX>811</locationX>
+        <locationY>89</locationY>
+        <inputAssignments>
+            <field>Request_Status__c</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Status_as_Error</name>
+        <label>Update Status as Error</label>
+        <locationX>810</locationX>
+        <locationY>230</locationY>
+        <inputAssignments>
+            <field>Request_Status__c</field>
+            <value>
+                <stringValue>Errored</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <start>
-        <locationX>50</locationX>
-        <locationY>50</locationY>
-        <connector>
-            <targetReference>Delete_permission_sets</targetReference>
-        </connector>
+        <locationX>31</locationX>
+        <locationY>46</locationY>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>and</filterLogic>
         <filters>
-            <field>Request_Status__c</field>
+            <field>is_Approved__c</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Approved</stringValue>
+                <booleanValue>true</booleanValue>
             </value>
         </filters>
         <object>Request_Access__c</object>
         <recordTriggerType>Update</recordTriggerType>
+        <scheduledPaths>
+            <name>Update_Request_Access</name>
+            <connector>
+                <targetReference>Check_User</targetReference>
+            </connector>
+            <label>Update Request Access</label>
+            <offsetNumber>0</offsetNumber>
+            <offsetUnit>Hours</offsetUnit>
+            <timeSource>RecordTriggerEvent</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>Update_Request_Access_Status</name>
+            <connector>
+                <targetReference>Check_for_Record_Update</targetReference>
+            </connector>
+            <label>Update Request Access Status</label>
+            <offsetNumber>1</offsetNumber>
+            <offsetUnit>Hours</offsetUnit>
+            <timeSource>RecordTriggerEvent</timeSource>
+        </scheduledPaths>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>

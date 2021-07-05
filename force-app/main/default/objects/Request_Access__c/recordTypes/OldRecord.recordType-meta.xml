@@ -10,6 +10,14 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Errored</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Pending</fullName>
             <default>true</default>
         </values>

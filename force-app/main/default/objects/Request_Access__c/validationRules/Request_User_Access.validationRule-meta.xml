@@ -4,7 +4,10 @@
     <active>true</active>
     <description>This Validation rule is created on requesting role field to restrict user request access to particular users.</description>
     <errorConditionFormula>AND(NOT(IF(AND(($UserRole.Name = &apos;Read only&apos;) , ISPICKVAL( Requesting_Role__c , &apos;User&apos;)), TRUE, FALSE)), NOT(IF(AND(($UserRole.Name = &apos;User&apos;) , ISPICKVAL( Requesting_Role__c , &apos;Supervisor&apos;)), TRUE, FALSE)), 
-NOT(IF(AND(($UserRole.Name = &apos;Supervisor&apos;) , ISPICKVAL( Requesting_Role__c , &apos;Admin&apos;)), TRUE, FALSE)))</errorConditionFormula>
+NOT(IF(AND(($UserRole.Name = &apos;Supervisor&apos;) , ISPICKVAL( Requesting_Role__c , &apos;Admin&apos;)), TRUE, FALSE)),
+NOT(IF(AND(($UserRole.Name = &apos;Admin&apos;) , ISPICKVAL(  Requesting_Role__c , &apos;User&apos;)), TRUE, FALSE)),
+NOT(IF(AND(($UserRole.Name = &apos;Admin&apos;) , ISPICKVAL(  Requesting_Role__c , &apos;Supervisor&apos;)), TRUE, FALSE)),
+NOT(IF(AND(($UserRole.Name = &apos;Admin&apos;) , ISPICKVAL(  Requesting_Role__c , &apos;Admin&apos;)), TRUE, FALSE)))</errorConditionFormula>
     <errorDisplayField>Requesting_Role__c</errorDisplayField>
     <errorMessage>User should request for appropriate roles like 
 Read only user can request only User,
