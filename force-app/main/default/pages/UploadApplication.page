@@ -1,0 +1,18 @@
+<apex:page sidebar="false" controller="ApplicationApex" showHeader="false">
+   <apex:form >
+      <apex:sectionHeader title="Upload data from CSV file"/>
+      <apex:pagemessages />
+      <apex:pageBlock >
+             <!--  Component to allow user to upload file from local machine -->
+             <center>
+              <apex:inputFile value="{!contentFile}" filename="{!nameFile}" /> <apex:commandButton action="{!ReadFile}" value="Upload File" id="theButton" style="width:70px;"/>
+              <br/> <br/> <font color="red"> <b>Note: Please use the  template to upload Application. <a href="https://drive.google.com/file/d/1PRYQXYiweQ5RDDp-dnyt1-RvnSSWjzna/view?usp=sharing" target="_blank"> Click here </a> to download the template. </b> </font>
+             </center>  
+              <!-- After the user clicks the 'Upload File' button, this section displays the inserted data -->
+      
+      <apex:pageblocktable value="{!ApplicationCSV}" var="app" rendered="{!NOT(ISNULL(ApplicationCSV))}">
+      </apex:pageblocktable> 
+      
+      </apex:pageBlock>       
+   </apex:form>   
+</apex:page>
