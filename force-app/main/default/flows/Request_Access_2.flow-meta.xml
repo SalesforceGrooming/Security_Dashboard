@@ -4,8 +4,8 @@
     <decisions>
         <name>Check_for_Record_Update</name>
         <label>Check for Record Update</label>
-        <locationX>485</locationX>
-        <locationY>179</locationY>
+        <locationX>487</locationX>
+        <locationY>176</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Completed</name>
@@ -177,7 +177,7 @@
         <name>Update_Status</name>
         <label>Update Status</label>
         <locationX>811</locationX>
-        <locationY>89</locationY>
+        <locationY>88</locationY>
         <inputAssignments>
             <field>Request_Status__c</field>
             <value>
