@@ -60,8 +60,8 @@
             <label>Check user id</label>
         </rules>
     </decisions>
-    <interviewLabel>Request Access Flow-2 {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Request Access Flow2</label>
+    <interviewLabel>Request Access 2 {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Request Access 2</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>

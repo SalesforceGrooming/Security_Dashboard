@@ -2,10 +2,10 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>52.0</apiVersion>
     <decisions>
-        <name>Check_for_Record_Update</name>
-        <label>Check for Record Update</label>
-        <locationX>485</locationX>
-        <locationY>179</locationY>
+        <name>Update_Record_Status</name>
+        <label>Update Record Status</label>
+        <locationX>483</locationX>
+        <locationY>130</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Completed</name>
@@ -14,54 +14,54 @@
                 <leftValueReference>$Record.CreatedBy.UserRoleId</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>00E0T000000LWF9UAO</stringValue>
+                    <stringValue>00E0T000000LWFEUA4</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Status</targetReference>
+                <targetReference>Req_Status_Completed</targetReference>
             </connector>
             <label>Completed</label>
         </rules>
         <rules>
-            <name>Error</name>
+            <name>Errored</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.CreatedBy.UserRoleId</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>00E0T000000LWFEUA4</stringValue>
+                    <stringValue>00E0T000000LWFJUA4</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Status_as_Error</targetReference>
+                <targetReference>Req_Status_Error</targetReference>
             </connector>
-            <label>Error</label>
+            <label>Errored</label>
         </rules>
     </decisions>
     <decisions>
-        <name>Check_User</name>
-        <label>Check User</label>
-        <locationX>149</locationX>
-        <locationY>362</locationY>
+        <name>User_Decision</name>
+        <label>User Decision</label>
+        <locationX>166</locationX>
+        <locationY>375</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Check_user_id</name>
+            <name>User_Decision1</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.CreatedBy.UserRoleId</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>00E0T000000LWFEUA4</stringValue>
+                    <stringValue>00E0T000000LWFJUA4</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Delete_permission_sets</targetReference>
+                <targetReference>Delete_Permission_set1</targetReference>
             </connector>
-            <label>Check user id</label>
+            <label>User Decision1</label>
         </rules>
     </decisions>
-    <interviewLabel>Request Access Flow-2 {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Request Access Flow2</label>
+    <interviewLabel>Req Access 1 {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Req Access 1</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -82,12 +82,12 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordCreates>
-        <name>Create_Permission_sets</name>
-        <label>Create Permission sets</label>
-        <locationX>473</locationX>
-        <locationY>356</locationY>
+        <name>Create_Permission_set1</name>
+        <label>Create Permission set1</label>
+        <locationX>525</locationX>
+        <locationY>369</locationY>
         <connector>
-            <targetReference>Create_Queue_Records</targetReference>
+            <targetReference>update_user_object1</targetReference>
         </connector>
         <inputAssignments>
             <field>AssigneeId</field>
@@ -98,49 +98,26 @@
         <inputAssignments>
             <field>PermissionSetId</field>
             <value>
-                <stringValue>0PS0T000000EXmDWAW</stringValue>
+                <stringValue>0PS0T000000EXm3WAG</stringValue>
             </value>
         </inputAssignments>
         <object>PermissionSetAssignment</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
-    <recordCreates>
-        <name>Create_Queue_Records</name>
-        <label>Create Queue Records</label>
-        <locationX>596</locationX>
-        <locationY>356</locationY>
-        <connector>
-            <targetReference>Assign_Role</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>GroupId</field>
-            <value>
-                <stringValue>00G0T000001djaJUAQ</stringValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>UserOrGroupId</field>
-            <value>
-                <elementReference>$Record.CreatedById</elementReference>
-            </value>
-        </inputAssignments>
-        <object>GroupMember</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
     <recordDeletes>
-        <name>Delete_permission_sets</name>
-        <label>Delete permission sets</label>
-        <locationX>344</locationX>
-        <locationY>354</locationY>
+        <name>Delete_Permission_set1</name>
+        <label>Delete Permission set1</label>
+        <locationX>380</locationX>
+        <locationY>367</locationY>
         <connector>
-            <targetReference>Create_Permission_sets</targetReference>
+            <targetReference>Create_Permission_set1</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>PermissionSetId</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>0PS0T000000EXm3WAG</stringValue>
+                <stringValue>0PS0T000000EXlyWAG</stringValue>
             </value>
         </filters>
         <filters>
@@ -153,10 +130,36 @@
         <object>PermissionSetAssignment</object>
     </recordDeletes>
     <recordUpdates>
-        <name>Assign_Role</name>
-        <label>Assign Role</label>
-        <locationX>734</locationX>
-        <locationY>352</locationY>
+        <name>Req_Status_Completed</name>
+        <label>Req Status Completed</label>
+        <locationX>667</locationX>
+        <locationY>31</locationY>
+        <inputAssignments>
+            <field>Request_Status__c</field>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Req_Status_Error</name>
+        <label>Req Status Error</label>
+        <locationX>682</locationX>
+        <locationY>211</locationY>
+        <inputAssignments>
+            <field>Request_Status__c</field>
+            <value>
+                <stringValue>Errored</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>update_user_object1</name>
+        <label>update user object1</label>
+        <locationX>684</locationX>
+        <locationY>363</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -168,40 +171,14 @@
         <inputAssignments>
             <field>UserRoleId</field>
             <value>
-                <stringValue>00E0T000000LWF9UAO</stringValue>
+                <stringValue>00E0T000000LWFEUA4</stringValue>
             </value>
         </inputAssignments>
         <object>User</object>
     </recordUpdates>
-    <recordUpdates>
-        <name>Update_Status</name>
-        <label>Update Status</label>
-        <locationX>811</locationX>
-        <locationY>89</locationY>
-        <inputAssignments>
-            <field>Request_Status__c</field>
-            <value>
-                <stringValue>Completed</stringValue>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Status_as_Error</name>
-        <label>Update Status as Error</label>
-        <locationX>810</locationX>
-        <locationY>230</locationY>
-        <inputAssignments>
-            <field>Request_Status__c</field>
-            <value>
-                <stringValue>Errored</stringValue>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
     <start>
         <locationX>31</locationX>
-        <locationY>46</locationY>
+        <locationY>39</locationY>
         <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
         <filterLogic>and</filterLogic>
         <filters>
@@ -214,21 +191,21 @@
         <object>Request_Access__c</object>
         <recordTriggerType>Update</recordTriggerType>
         <scheduledPaths>
-            <name>Update_Request_Access</name>
+            <name>record_change</name>
             <connector>
-                <targetReference>Check_User</targetReference>
+                <targetReference>User_Decision</targetReference>
             </connector>
-            <label>Update Request Access</label>
+            <label>record change</label>
             <offsetNumber>0</offsetNumber>
             <offsetUnit>Hours</offsetUnit>
             <timeSource>RecordTriggerEvent</timeSource>
         </scheduledPaths>
         <scheduledPaths>
-            <name>Update_Request_Access_Status</name>
+            <name>Updated_Record_Status</name>
             <connector>
-                <targetReference>Check_for_Record_Update</targetReference>
+                <targetReference>Update_Record_Status</targetReference>
             </connector>
-            <label>Update Request Access Status</label>
+            <label>Updated Record Status</label>
             <offsetNumber>1</offsetNumber>
             <offsetUnit>Hours</offsetUnit>
             <timeSource>RecordTriggerEvent</timeSource>
